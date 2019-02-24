@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "gameXXXDDD"
+        versionCode = "10" 
+        version     = "1.0.0" >
+
+    
+
+    <name>Response Time App</name>
+
+    <description>
+        16011346
+    </description>
+
+    <author>
+        16011346
+    </author>
+   
+	<preference name="orientation" value="landscape" /> <!-- set to landscape -->
+        <icon src="logo.png" /> <!-- load logo image for game -->
+        <preference name="android-targetSdkVersion" value="7" /> <!-- target android version -->
+        <preference name="android-minSdkVersion" value="3" />  <!-- minimal android version -->
+        <preference name="DisallowOverscroll" value="true" />  <!-- disable scrolling -->
+        <preference name="EnableViewportScale" value="true" />  <!-- enable scale -->
+        <preference name="UIWebViewBounce" value="false" /> <!-- disable scrolling -->
+        <preference name="Fullscreen" value="true" /> <!-- enter full screen -->
+
+    <plugin name="cordova-plugin-vibration"/> <!-- VIBRATION plugin -->
+     
+
+</widget>

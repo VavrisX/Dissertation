@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content=" target-densitydpi=device-dpi, user-scalable=no" />
+
+<script src="index.js" type="text/javascript"></script>
+<script src="libraries/sweetalert.min.js"></script>
+            <link rel="stylesheet" type="text/css" href="libraries/sweetalert.css">
+            <link href="https://fonts.googleapis.com/css?family=Timmana" rel="stylesheet"> 
+    <link rel="stylesheet" href="index.css">
+ 
+<script src="jquery-mobile/jquery-1.11.1.min.js" type="text/javascript"></script>
+
+<script src="phonegap.js" type="text/javascript"></script>
+</head>
+<div id="all">
+<body>
+    <canvas id="myCanvas" width="1920" height="1080" style="border:1px
+     solid black;" tabindex="1" >
+    <img id="castle" src="castleGame.png" alt="castle" width="380px"
+         height="325px" />
+     <img id="background" src="lukasrocks.png" alt="background" width="1920px"
+             height="1080px" onclick="mouseClickHandler(event);" />
+
+        <img id="fighter" class="fighter" src="newsprite.png" width="55" height="90" />
+        
+        <img id="ufo"  src="ufo1.png" width="150" height="106" />
+        
+        <img id="arrow" class="arrow" src="arrow.png" width="20" height="50" />    
+        
+        <img id="pause"  src="pauseB.png" width="170" height="170"  />  
+        
+        <img id="play"  src="playB.png" width="170" height="170"  />  
+        
+        <img id="exit"  src="exit.png" width="170" height="170" onClick="pause2(event);" />  
+
+ </canvas>
+
+    </body>
+    </div>
+</html>
