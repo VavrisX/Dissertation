@@ -1,4 +1,4 @@
-var mouseX = 10;
+var mouseX = -100;
 
 
 
@@ -23,16 +23,16 @@ console.log("event..");
  }
  
    function mouseClickHandler(event){  // on touch, move mouse
-  mouseX += 100;    
+  mouseX += 50;    
   }
 
 function render() {     
  gc.drawImage(background,0,0);  // draw background
- gc.drawImage(myCheese,1000,750); // draw cheese
+ gc.drawImage(myCheese,500,750); // draw cheese
  gc.drawImage(myMouse,mouseX,650); // draw mouse
 
 
-if(mouseX >= 1000){
+if(mouseX >= 500){
      swal({   //Sweet alert JS library
   title: "Thank you for your help!",
   type: "info",
