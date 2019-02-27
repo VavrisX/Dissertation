@@ -12,7 +12,7 @@ background-color: whitesmoke;
 			border: 0;
 	overflow: hidden; /*  Disable scrollbars */
 			display: block;  /* No floating content on sides */
-    position: absolute; left: 0px; top: 0px
+  //  position: absolute; left: 0px; top: 0px
 		}
 
 /* NAVIGATION */
