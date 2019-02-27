@@ -1,6 +1,6 @@
 body{
 font-family: 'Timmana', sans-serif;
-color:Black; font-size: 50px;
+color:Black; font-size: 200%;
 zoom:100%;
 background-color: whitesmoke;   
 }
@@ -10,7 +10,7 @@ background-color: whitesmoke;
 			height: 100%;
 			margin: 0px;
 			border: 0;
-	overflow: hidden; /*  Disable scrollbars */
+//	overflow: hidden; /*  Disable scrollbars */
 			display: block;  /* No floating content on sides */
     position: absolute; left: 0px; top: 0px
 		}
@@ -22,7 +22,7 @@ background-color: whitesmoke;
     
 }
 #name{
-    color:black; font-size: 140px;
+    color:black; font-size: 300%;
     font-family: 'Arial', cursive;
 }
 
@@ -38,13 +38,13 @@ background-color: whitesmoke;
 }
 
 #nav li  {
-    font-size: 55px;
+    font-size: 150%;
     display: block;
     width: 40%;
     padding: 1.7%;
     color: white;
-    border: 5px solid #0E8C0D;
-    border-radius: 340px;
+    border: 1px solid #0E8C0D;
+    border-radius: 50px;
     text-align: center;
     outline: black;
     text-decoration: none; 
@@ -68,7 +68,7 @@ background-color: whitesmoke;
     padding: 0%;
     color: white;
     border: 1px solid #0E8C0D;
-    border-radius: 120px;
+    border-radius: 30%;
     text-align: center;
     text-decoration: none; 
     font-family: 'Raleway', sans-serif;
