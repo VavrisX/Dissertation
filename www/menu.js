@@ -61,8 +61,18 @@ function getAndroid(){
 
 
 function exitApp(){
-       navigator.app.exitApp(); 
-        window.close();
+     //  navigator.app.exitApp(); 
+      //  window.close();
+    
+  var a = localStorage.getItem('startTime');
+  var b = localStorage.getItem('endTime');
+  var c = localStorage.getItem('finalTime');
+  var d = localStorage.getItem('system');
+    
+     console.log(a);
+     console.log(b);
+     console.log(c);
+     console.log(d);
     }
 
 function showResults(){
