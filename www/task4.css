@@ -2,7 +2,7 @@ body{
 font-family: 'Timmana', sans-serif;
 color:Black; font-size: 50px;
 zoom:100%;
-background-color: whitesmoke;   
+background-color:ghostwhite;
 }
 
 #all{
@@ -12,7 +12,7 @@ background-color: whitesmoke;
 			border: 0;
 	overflow: hidden; /*  Disable scrollbars */
 			display: block;  /* No floating content on sides */
- //   position: absolute; left: 0px; top: 0px;
+    position: absolute; left: 0px; top: 0px;
 		}
 
 /* NAVIGATION */
@@ -79,4 +79,11 @@ background-color: whitesmoke;
     text-align: center;
     list-style-type: none;
     position: absolute; left: 91%; top: 4px;
+}
+
+input[type=text] {
+  width: 10%;
+  padding: 30px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }
