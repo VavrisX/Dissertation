@@ -19,7 +19,17 @@ console.log("event..");
  background=document.getElementById("background");    
  myMouse = document.getElementById("mouse");
  myCheese = document.getElementById("cheese");
-       
+  
+     swal({   //Sweet alert JS library
+  title: "Tap the screen to help the mouse get pizza!",
+  type: "info",
+  showCancelButton: false,
+  confirmButtonColor: "#006600",
+  confirmButtonText: "Continue",
+  closeOnConfirm: true
+},
+function(isConfirm){                     
+});    
  }
  
    function mouseClickHandler(event){  // on touch, move mouse
