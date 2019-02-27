@@ -22,11 +22,10 @@
         <preference name="android-targetSdkVersion" value="7" /> <!-- target android version -->
         <preference name="android-minSdkVersion" value="3" />  <!-- minimal android version -->
         <preference name="DisallowOverscroll" value="true" />  <!-- disable scrolling -->
+        
         <preference name="EnableViewportScale" value="true" />  <!-- enable scale -->
         <preference name="UIWebViewBounce" value="false" /> <!-- disable scrolling -->
         <preference name="Fullscreen" value="true" /> <!-- enter full screen -->
-
-    <plugin name="cordova-plugin-vibration"/> <!-- VIBRATION plugin -->
      
 
 </widget>
