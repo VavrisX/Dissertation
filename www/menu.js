@@ -61,10 +61,8 @@ function getAndroid(){
 
 
 function exitApp(){
-       // navigator.app.exitApp(); 
-       // window.close();
-    start = localStorage.getItem('startTime');
-    console.log(start);
+       navigator.app.exitApp(); 
+        window.close();
     }
 
 function showResults(){
