@@ -26,6 +26,16 @@
         <preference name="EnableViewportScale" value="true" />  <!-- enable scale -->
         <preference name="UIWebViewBounce" value="false" /> <!-- disable scrolling -->
         <preference name="Fullscreen" value="true" /> <!-- enter full screen -->
-     
-
+        
+        <gap:plugin name="cordova-plugin-whitelist" source="npm" />
+        
+        <allow-navigation href="http://*/*" />
+        
+        <allow-intent href="https://*/*" />
+        
+        <access origin="*" subdomains="true" />
+        
+        <uses-permission android:name="android.permission.INTERNET" />
+        
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 </widget>
