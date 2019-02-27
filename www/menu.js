@@ -28,6 +28,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 }
 
 function getTimeStart(){
+   authenticate();
    start = new Date().getTime();
    localStorage.setItem('startTime', start);
 }
@@ -73,6 +74,7 @@ function exitApp(){
      console.log(b);
      console.log(c);
      console.log(d);
+     console.log(firebase.auth().currentUser.uid);
     }
 
 function showResults(){
