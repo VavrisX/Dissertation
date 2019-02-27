@@ -64,7 +64,6 @@ function getAndroid(){
 function exitApp(){
      //  navigator.app.exitApp(); 
       //  window.close();
-    
   var a = localStorage.getItem('startTime');
   var b = localStorage.getItem('endTime');
   var c = localStorage.getItem('finalTime');
@@ -75,6 +74,7 @@ function exitApp(){
      console.log(c);
      console.log(d);
      console.log(firebase.auth().currentUser.uid);
+     checkConnection(); 
     }
 
 function showResults(){
@@ -101,6 +101,21 @@ function writeUserData(uid, DeviceX, TimeX) {
   }); 
 }
 
+function checkConnection() {
+    var networkState = navigator.connection.type;
+
+    var states = {};
+    states[Connection.UNKNOWN]  = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI]     = 'WiFi connection';
+    states[Connection.CELL_2G]  = 'Cell 2G connection';
+    states[Connection.CELL_3G]  = 'Cell 3G connection';
+    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.CELL]     = 'Cell generic connection';
+    states[Connection.NONE]     = 'No network connection';
+
+    alert('Connection type: ' + states[networkState]);
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
