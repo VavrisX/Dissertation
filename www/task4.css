@@ -87,3 +87,18 @@ input[type=text] {
   margin: 8px 0;
   box-sizing: border-box;
 }
+
+*{
+-webkit-user-drag: none;
+-moz-user-drag: none;
+-ms-user-drag: none;
+user-drag: none;
+}
+
+*
+{
+-webkit-touch-callout: none;
+-moz-touch-callout: none;
+-ms-touch-callout: none;
+touch-callout: none;
+}
