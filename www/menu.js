@@ -99,8 +99,10 @@ function writeUserData(uid, DeviceX, TimeX) {
     SystemUser: DeviceX,
     TimeFinal: TimeX,   
   };
+  var newUpdateKey = firebase.database().ref().child('Device').push().key;  
+    
     var updates = {};
-    updates['Device/' + firebase.auth().currentUser.uid] = postData;
+    updates['Device/' + firebase.auth().currentUser.uid + newUpdateKey] = postData;
    return firebase.database().ref().update(updates);   
 }
 
