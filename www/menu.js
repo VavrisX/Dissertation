@@ -95,10 +95,13 @@ function showResults(){
 function writeUserData(uid, DeviceX, TimeX) {
     TimeX = localStorage.getItem('finalTime');
     DeviceX = localStorage.getItem('system');
-  firebase.database().ref('Device/' + firebase.auth().currentUser.uid ).set({
+  var postData = {
     SystemUser: DeviceX,
-    TimeFinal: TimeX,
-    }); 
+    TimeFinal: TimeX,   
+  };
+    var updates = {};
+    updates['Device/' + firebase.auth().currentUser.uid] = postData;
+   return firebase.database().ref().update(updates);   
 }
 
 
