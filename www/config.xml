@@ -17,6 +17,7 @@
         16011346
     </author>
    
+        <plugin name="cordova-plugin-device" spec="~2.0.2" /> 
 	<preference name="orientation" value="landscape" /> <!-- set to landscape -->
         <icon src="logo1.png" /> <!-- load logo image for game -->
         <preference name="android-targetSdkVersion" value="7" /> <!-- target android version -->
@@ -34,6 +35,4 @@
         <allow-intent href="https://*/*" />
         
         <access origin="*" subdomains="true" />
-        
-       <plugin name="cordova-plugin-device" spec="~2.0.2" /> 
 </widget>

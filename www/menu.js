@@ -6,11 +6,15 @@ var database = firebase.database();
 var TimeX;
 var DeviceX;
 
+document.addEventListener("deviceready", onDeviceReady, false);
+
 window.onload = function() {
- authenticate(); 
-document.addEventListener("deviceready", onDeviceReady, false);    
+ authenticate();     
 }
 function onDeviceReady() { 
+       console.log(device); // device object 
+       console.log(device.name); // Gives the name of device.
+       console.log(device.uuid ); // Gives the UUID.
        writeStartData();
     }
 
