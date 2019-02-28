@@ -74,6 +74,7 @@ function exitApp(){
      console.log(c);
      console.log(d);
      console.log(firebase.auth().currentUser.uid);
+    writeStartData();
      checkConnection(); 
     }
 
@@ -96,9 +97,9 @@ function writeUserData(uid, DeviceX, TimeX) {
     TimeX = localStorage.getItem('finalTime');
     DeviceX = localStorage.getItem('system');
   firebase.database().ref('Device/' + firebase.auth().currentUser.uid ).set({
-    System: DeviceX,
-    Time: TimeX,
-  }); 
+    SystemReal: DeviceX,
+    TimeFinal: TimeX,
+    }); 
 }
 
 function checkConnection() {
@@ -115,6 +116,17 @@ function checkConnection() {
     states[Connection.NONE]     = 'No network connection';
 
     alert('Connection type: ' + states[networkState]);
+}
+
+function writeStartData() {
+    var deviceReal = device.platform;
+    var deviceVersion = device.version;
+    var d = new Date();
+    var timeStart = (d.getHours() + 1) + "/" + d.getMinutes() + "/" + d.getSeconds();
+    
+    console.log(timeStart);
+    console.log(deviceReal);
+    console.log(deviceVersion);
 }
 
 

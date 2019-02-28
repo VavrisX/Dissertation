@@ -35,4 +35,5 @@
         
         <access origin="*" subdomains="true" />
         
+       <plugin name="cordova-plugin-device" spec="~2.0.2" /> 
 </widget>

@@ -33,7 +33,7 @@ function(isConfirm){
  }
  
    function mouseClickHandler(event){  // on touch, move mouse
-  mouseX += 50;    
+  mouseX += 60;    
   }
 
 function render() {     
