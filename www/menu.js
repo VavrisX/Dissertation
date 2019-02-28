@@ -7,8 +7,13 @@ var TimeX;
 var DeviceX;
 
 window.onload = function() {
- authenticate();     
+ authenticate(); 
+document.addEventListener("deviceready", onDeviceReady, false);    
 }
+function onDeviceReady() { 
+       writeStartData();
+    }
+
 
 function authenticate(){
 firebase.auth().signInAnonymously().catch(function(error) {
