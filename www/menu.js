@@ -12,10 +12,9 @@ window.onload = function() {
  authenticate();     
 }
 function onDeviceReady() { 
-       console.log(device); // device object 
-       console.log(device.name); // Gives the name of device.
-       console.log(device.uuid ); // Gives the UUID.
-       writeStartData();
+
+    
+    
     }
 
 
@@ -38,6 +37,7 @@ firebase.auth().onAuthStateChanged(function(user) {
 
 function getTimeStart(){
    authenticate();
+   writeStartData();
    start = new Date().getTime();
    localStorage.setItem('startTime', start);
 }
@@ -73,18 +73,8 @@ function getAndroid(){
 function exitApp(){
      //  navigator.app.exitApp(); 
       //  window.close();
-  var a = localStorage.getItem('startTime');
-  var b = localStorage.getItem('endTime');
-  var c = localStorage.getItem('finalTime');
-  var d = localStorage.getItem('system');
-    
-     console.log(a);
-     console.log(b);
-     console.log(c);
-     console.log(d);
-     console.log(firebase.auth().currentUser.uid);
+
     writeStartData();
-     checkConnection(); 
     }
 
 function showResults(){
@@ -106,36 +96,27 @@ function writeUserData(uid, DeviceX, TimeX) {
     TimeX = localStorage.getItem('finalTime');
     DeviceX = localStorage.getItem('system');
   firebase.database().ref('Device/' + firebase.auth().currentUser.uid ).set({
-    SystemReal: DeviceX,
+    SystemUser: DeviceX,
     TimeFinal: TimeX,
     }); 
 }
 
-function checkConnection() {
-    var networkState = navigator.connection.type;
 
-    var states = {};
-    states[Connection.UNKNOWN]  = 'Unknown connection';
-    states[Connection.ETHERNET] = 'Ethernet connection';
-    states[Connection.WIFI]     = 'WiFi connection';
-    states[Connection.CELL_2G]  = 'Cell 2G connection';
-    states[Connection.CELL_3G]  = 'Cell 3G connection';
-    states[Connection.CELL_4G]  = 'Cell 4G connection';
-    states[Connection.CELL]     = 'Cell generic connection';
-    states[Connection.NONE]     = 'No network connection';
-
-    alert('Connection type: ' + states[networkState]);
-}
-
-function writeStartData() {
+function writeStartData(uid, deviceReal, deviceVersion, timeStart) {
     var deviceReal = device.platform;
     var deviceVersion = device.version;
     var d = new Date();
-    var timeStart = (d.getHours() + 1) + "/" + d.getMinutes() + "/" + d.getSeconds();
+    var timeStart = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
     
     console.log(timeStart);
     console.log(deviceReal);
     console.log(deviceVersion);
+    
+  firebase.database().ref('Device/' + firebase.auth().currentUser.uid ).set({
+    SystemReal: deviceReal,
+    SystemVersion: deviceVersion,
+    timeODStart: timeStart,
+    }); 
 }
 
 
