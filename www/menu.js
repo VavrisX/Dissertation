@@ -5,6 +5,7 @@ var finalT;
 var database = firebase.database();
 var TimeX;
 var DeviceX;
+var age;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -71,10 +72,9 @@ function getAndroid(){
 
 
 function exitApp(){
-     //  navigator.app.exitApp(); 
-      //  window.close();
+        navigator.app.exitApp(); 
+        window.close();
 
-    writeStartData();
     }
 
 function showResults(){
@@ -95,9 +95,12 @@ function showResults(){
 function writeUserData(uid, DeviceX, TimeX) {
     TimeX = localStorage.getItem('finalTime');
     DeviceX = localStorage.getItem('system');
+    var d = new Date();
+    var timeEnd = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
   var postData = {
     SystemUser: DeviceX,
-    TimeFinal: TimeX,   
+    TimeFinal: TimeX,
+    timeODEnd: timeEnd,
   };
   var newUpdateKey = firebase.database().ref().child('Device').push().key;  
     
@@ -106,16 +109,22 @@ function writeUserData(uid, DeviceX, TimeX) {
    return firebase.database().ref().update(updates);   
 }
 
+function writeAge(uid, age) {
+  var postData = {
+    YearOfBirth: age,
+  };
+  var newUpdateKey = firebase.database().ref().child('Device').push().key;  
+    
+    var updates = {};
+    updates['Device/' + firebase.auth().currentUser.uid + newUpdateKey] = postData;
+   return firebase.database().ref().update(updates);   
+}
 
 function writeStartData(uid, deviceReal, deviceVersion, timeStart) {
     var deviceReal = device.platform;
     var deviceVersion = device.version;
     var d = new Date();
     var timeStart = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
-    
-    console.log(timeStart);
-    console.log(deviceReal);
-    console.log(deviceVersion);
     
   firebase.database().ref('Device/' + firebase.auth().currentUser.uid ).set({
     SystemReal: deviceReal,
@@ -163,4 +172,29 @@ else if (x !== "happy" || x !== "Happy") {
 function(isConfirm){
 });
   }
+}
+
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+//Code for task 0
+function submitYear(){
+    age = document.forms["myForm"]["year"].value;
+    
+    if(isNaN(age) || age.toString().length !== 4 || age < 1950 || age > 2003){
+            swal({   //Sweet alert JS library
+  title: "Incorrect format, please type in 4 numbers, example(1997)",
+  type: "info",
+  showCancelButton: false,
+  confirmButtonColor: "#006600",
+  confirmButtonText: "ok",
+  closeOnConfirm: true
+},
+function(isConfirm){
+});
+  }
+ 
+else{
+  writeAge();
+  window.location.href="task1.html";  
+}   
 }

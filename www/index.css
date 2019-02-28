@@ -10,7 +10,7 @@ background-color: whitesmoke;
 			height: 100%;
 			margin: 0px;
 			border: 0;
-	overflow: hidden; /*  Disable scrollbars */
+//	overflow: hidden; /*  Disable scrollbars */
 			display: block;  /* No floating content on sides */
     position: absolute; left: 0px; top: 0px
 		}
@@ -79,4 +79,26 @@ background-color: whitesmoke;
     text-align: center;
     list-style-type: none;
     position: absolute; left: 91%; top: 4px;
+}
+
+input[type=text] {
+  width: 20%;
+  padding: 2% 4%;
+  margin: 2% 0;
+  box-sizing: border-box;
+}
+
+*{
+-webkit-user-drag: none;
+-moz-user-drag: none;
+-ms-user-drag: none;
+user-drag: none;
+}
+
+*
+{
+-webkit-touch-callout: none;
+-moz-touch-callout: none;
+-ms-touch-callout: none;
+touch-callout: none;
 }
