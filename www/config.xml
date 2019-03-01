@@ -16,7 +16,7 @@
     <author>
         16011346
     </author>
-   
+         <plugin name="cordova-plugin-exitapp-ios" spec="~0.0.2" /> 
         <plugin name="cordova-plugin-device" spec="~2.0.2" /> 
 	<preference name="orientation" value="landscape" /> <!-- set to landscape -->
         <icon src="logo1.png" /> <!-- load logo image for game -->
