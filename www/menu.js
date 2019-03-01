@@ -6,6 +6,7 @@ var database = firebase.database();
 var TimeX;
 var DeviceX;
 var age;
+var userAge;
 
 document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -72,9 +73,8 @@ function getAndroid(){
 
 
 function exitApp(){
-        navigator.app.exitApp(); 
         window.close();
-
+        navigator.app.exitApp();
     }
 
 function showResults(){
@@ -109,9 +109,11 @@ function writeUserData(uid, DeviceX, TimeX) {
    return firebase.database().ref().update(updates);   
 }
 
-function writeAge(uid, age) {
+function writeAgeData(uid, userAge) {
+    userAge = localStorage.getItem('userAge');
+    
   var postData = {
-    YearOfBirth: age,
+    BirthYear: userAge,
   };
   var newUpdateKey = firebase.database().ref().child('Device').push().key;  
     
@@ -119,6 +121,7 @@ function writeAge(uid, age) {
     updates['Device/' + firebase.auth().currentUser.uid + newUpdateKey] = postData;
    return firebase.database().ref().update(updates);   
 }
+
 
 function writeStartData(uid, deviceReal, deviceVersion, timeStart) {
     var deviceReal = device.platform;
@@ -179,6 +182,8 @@ function(isConfirm){
 //Code for task 0
 function submitYear(){
     age = document.forms["myForm"]["year"].value;
+    userAge = document.getElementById("userAge").value;
+    localStorage.setItem('userAge', userAge);
     
     if(isNaN(age) || age.toString().length !== 4 || age < 1950 || age > 2003){
             swal({   //Sweet alert JS library
@@ -194,7 +199,7 @@ function(isConfirm){
   }
  
 else{
-  writeAge();
-  window.location.href="task1.html";  
+    writeAgeData();
+    window.location.href="task1.html";  
 }   
 }
